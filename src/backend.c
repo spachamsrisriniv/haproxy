@@ -1116,7 +1116,7 @@ int alloc_bind_address(struct sockaddr_storage **ss,
 		BUG_ON(!s); /* Dynamic source setting requires a stream instance. */
 
 		/* FIXME: what can we do if the client connects in IPv6 or unix socket ? */
-		addr = sc_src(s->scf);
+		addr = sc_dst(s->scf);
 		if (!addr)
 			return SRV_STATUS_INTERNAL;
 
